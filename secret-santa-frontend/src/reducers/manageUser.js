@@ -7,8 +7,8 @@ export default function manageUser(state = {
 
 		case 'ADD_WISHES':
 			return {loading: false, wishes: action.wishes}
+
+		default:
+			return state;
 	}
-
-
-	return state;
 }
