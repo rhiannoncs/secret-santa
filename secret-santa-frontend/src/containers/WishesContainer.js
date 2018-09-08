@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchWishes } from '../actions/fetchWishes'
+import { fetchWishes } from '../actions/userActions'
 
 import Wishes from '../components/Wishes'
 

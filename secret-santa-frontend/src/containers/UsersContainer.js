@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import UserLogin from '../components/UserLogin'
 import WishesContainer from './WishesContainer'
 
 export default class UsersContainer extends Component {
@@ -6,8 +7,8 @@ export default class UsersContainer extends Component {
 	render() {
 		return (
 			<div>
-				Log In
-				<WishesContainer />
+				<UserLogin />
+				Wishes Container
 			</div>
 			)
 	}
