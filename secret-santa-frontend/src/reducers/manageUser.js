@@ -1,12 +1,16 @@
 export default function manageUser(state = {
-	loading: false, users: [], wishes: []
+	loading: false, jwt: [], wishes: []
 }, action) {
 	switch (action.type) {
 		case 'LOADING':
 			return {...state, loading: true}
 
 		case 'ADD_WISHES':
-			return {loading: false, wishes: action.wishes}
+			return {...state, loading: false, wishes: action.wishes}
+
+		case 'LOGIN':
+			console.log({...state, loading: false, jwt: action.jwt})
+			return {...state, loading: false, jwt: action.jwt}
 
 		default:
 			return state;

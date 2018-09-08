@@ -24,35 +24,13 @@ export default class UserLogin extends Component {
 			headers: {'Content-Type': 'application/json'},
 			body: JSON.stringify(request)
 		}).then(res => res.json())
-			.then(response => console.log(JSON.stringify(response)))
+			.then(response => this.props.login(response.jwt))
 		this.setState({
 			email: '',
 			password: ''
 		})
 
 	}
-
-	/*login  = (event) => {
-		event.preventDefault();
-    	const email = this.state.email;
-		const password = this.state.password;
-    	const request = {"auth": {"email": email, "password": password}}
-    	console.log(request)
-    	$.ajax({
-      		url: "http://localhost:3001/api/user_token",
-      		type: "POST",
-      		data: request,
-      		dataType: "json",
-      		success: function (result) {
-        		console.log(result)
-        		localStorage.setItem("jwt", result.jwt)
-      		}
-    	})
-    	this.setState({
-			email: '',
-			password: ''
-		})
-  	}*/
 
 	render () {
 		return (
