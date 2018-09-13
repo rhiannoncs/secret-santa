@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Wish from './Wish'
 
-export default class Wishes extends Component {
-	generateWishes = () => this.props.wishes.map((wish, index) => <Wish key={index} content={wish.content} />)
-	render () {
+const Wishes = (props) => {
+	const generateWishes = () => props.wishes.map((wish, index) => <Wish key={index} content={wish.content} />)
+	
 		return (
 			<ul>
-				{this.generateWishes()}
+				{generateWishes()}
 			</ul>
 
 			)
-	}
 }
+
+export default Wishes
