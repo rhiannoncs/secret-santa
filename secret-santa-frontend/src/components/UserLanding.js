@@ -5,9 +5,9 @@ import UserWelcome from './UserWelcome'
 const UserLanding = (props) => {
 	const isLoggedIn = props.isLoggedIn;
 	if (isLoggedIn) {
-		return <UserWelcome />;
+		return <UserWelcome username={props.username}/>;
 	}
-	return <UserLogin login={props.login} />
+	return <UserLogin login={props.login} addName={props.addName}/>
 }
 
 export default UserLanding;

@@ -24,7 +24,10 @@ export default class UserLogin extends Component {
 			headers: {'Content-Type': 'application/json'},
 			body: JSON.stringify(request)
 		}).then(res => res.json())
-			.then(response => this.props.login(response.jwt))
+			.then(response => {
+				this.props.login(response.jwt)
+				this.props.addName(response.jwt)
+			})
 		this.setState({
 			email: '',
 			password: ''
