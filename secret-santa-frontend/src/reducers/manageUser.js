@@ -12,8 +12,10 @@ export default function manageUser(state = {
 			return {...state, loading: false, jwt: action.jwt}
 
 		case 'ADD_NAME':
-			console.log(action.username)
 			return {...state, loading: false, username: action.username}
+
+		case 'LOGOUT':
+			return{...state, loading: false, jwt: [], username: []}
 
 		default:
 			return state;

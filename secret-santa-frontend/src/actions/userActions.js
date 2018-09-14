@@ -1,13 +1,12 @@
 
-export function login(jwt) {
+export const login = (jwt) => {
 	return {
 		type: 'LOGIN',
 		jwt
 	}
 }
 
-export function fetchName(jwt) {
-	console.log("Called");
+export const fetchName = (jwt) => {
 	return (dispatch) => {
 		dispatch({ type: 'LOADING'});
 		return fetch('http://localhost:3001/api/users/welcome', {
@@ -19,7 +18,13 @@ export function fetchName(jwt) {
 	}
 }
 
-export function fetchWishes() {
+export const logout = () => {
+	return {
+		type: 'LOGOUT'
+	}
+}
+
+export const fetchWishes = () => {
 	return (dispatch) => {
 		dispatch({ type: 'LOADING' });
 		return fetch('http://localhost:3001/api/users/1/wishes')
