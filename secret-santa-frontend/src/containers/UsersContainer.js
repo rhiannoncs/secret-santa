@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import UserLanding from '../components/UserLanding'
 import WishesContainer from './WishesContainer'
-import { login, fetchName, logout } from '../actions/userActions'
+import { login, fetchUserData, logout } from '../actions/userActions'
 
 class UsersContainer extends Component {
 
@@ -11,7 +11,7 @@ class UsersContainer extends Component {
 		return (
 			<div>
 				<UserLanding login={this.props.login} isLoggedIn={isLoggedIn(this.props.jwt)} 
-				addName={this.props.fetchName} username={this.props.username} logout={this.props.logout}/>
+				addUserData={this.props.fetchUserData} username={this.props.username} logout={this.props.logout}/>
 				Wishes Container
 			</div>
 			)
@@ -28,7 +28,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		...bindActionCreators({ login, fetchName, logout }, dispatch)
+		...bindActionCreators({ login, fetchUserData, logout }, dispatch)
 	}
 }
 

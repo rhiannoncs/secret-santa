@@ -26,7 +26,7 @@ export default class UserLogin extends Component {
 		}).then(res => res.json())
 			.then(response => {
 				this.props.login(response.jwt)
-				this.props.addName(response.jwt)
+				this.props.addUserData(response.jwt)
 			})
 		this.setState({
 			email: '',
