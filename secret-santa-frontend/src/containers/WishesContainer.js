@@ -7,7 +7,9 @@ import Wishes from '../components/Wishes'
 class WishesContainer extends Component {
 
 	componentDidMount() {
-		this.props.fetchWishes()
+		if (this.props.userId > 0) {
+			this.props.fetchWishes(this.props.userId, this.props.jwt)
+		}
 	}
 
 	render() {
@@ -21,7 +23,9 @@ class WishesContainer extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		wishes: state.wishes
+		wishes: state.wishes,
+		userId: state.userId,
+		jwt: state.jwt
 	}
 }
 

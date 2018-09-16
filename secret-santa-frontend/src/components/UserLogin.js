@@ -18,7 +18,6 @@ export default class UserLogin extends Component {
 		const email = this.state.email;
 		const password = this.state.password;
 		const request = {"auth": {"email": email, "password": password}};
-		console.log(request)
 		fetch('http://localhost:3001/api/user_token', {
 			method: 'POST',
 			headers: {'Content-Type': 'application/json'},

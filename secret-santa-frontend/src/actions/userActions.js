@@ -24,10 +24,13 @@ export const logout = () => {
 	}
 }
 
-export const fetchWishes = (userId) => {
+export const fetchWishes = (userId, jwt) => {
+	console.log(userId)
 	return (dispatch) => {
 		dispatch({ type: 'LOADING' });
-		return fetch(`http://localhost:3001/api/users/${userId}/wishes`)
+		return fetch(`http://localhost:3001/api/users/${userId}/wishes`, {
+			headers: {'Authorization': `Bearer ${jwt}`}
+		})
 			.then(response => response.json())
 			.then(wishes => dispatch({ type: 'ADD_WISHES', wishes: wishes}))
 			.catch(error => console.error('Error:', error))

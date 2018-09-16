@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import UserLanding from '../components/UserLanding'
-import WishesContainer from './WishesContainer'
 import { login, fetchUserData, logout } from '../actions/userActions'
 
 class UsersContainer extends Component {
@@ -11,8 +10,7 @@ class UsersContainer extends Component {
 		return (
 			<div>
 				<UserLanding login={this.props.login} isLoggedIn={isLoggedIn(this.props.jwt)} 
-				addUserData={this.props.fetchUserData} username={this.props.username} logout={this.props.logout}/>
-				Wishes Container
+				addUserData={this.props.fetchUserData} username={this.props.username} logout={this.props.logout} />
 			</div>
 			)
 	}
@@ -22,7 +20,8 @@ class UsersContainer extends Component {
 const mapStateToProps = (state) => {
 	return {
 		jwt: state.jwt,
-		username: state.username
+		username: state.username,
+		userId: state.userId
 	}
 }
 
