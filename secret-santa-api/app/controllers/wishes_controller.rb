@@ -7,4 +7,17 @@ class WishesController < ApplicationController
 		render json: wishes
 	end
 
+	def create
+		user = User.find(params[:user_id])
+		wish = user.wishes.build(wish_params)
+		wish.save
+		render json: wish
+	end
+
+	private
+
+	def wish_params
+		params.require(:wish).permit(:content, :user_id)
+	end
+
 end
