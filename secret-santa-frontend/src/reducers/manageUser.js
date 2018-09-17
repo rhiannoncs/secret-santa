@@ -8,12 +8,13 @@ export default function manageUser(state = {
 		case 'ADD_WISHES':
 			return {...state, loading: false, wishes: action.wishes}
 
+		case 'NEW_WISH':
+			return {...state, loading: false, wishes: [...state.wishes, action.wish]}
+
 		case 'LOGIN':
-			console.log(action)
 			return {...state, jwt: action.jwt}
 
 		case 'ADD_NAME_AND_ID':
-			console.log(action)
 			return {...state, loading: false, username: action.username, userId: action.userId}
 
 		case 'LOGOUT':

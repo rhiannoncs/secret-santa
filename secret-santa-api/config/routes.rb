@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   	resources :users, only: [] do
   		resources :wishes, only: [:index, :create]
   	end
+  	resources :exchanges, only: [:create]
   end
 end
